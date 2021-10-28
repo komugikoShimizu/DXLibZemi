@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\user\Desktop\DXzemi\komigiiro\DXLib_FlightRace_komugiiro\main.cpp(9): warning C4101: 'Buf': ローカル変数は 1 度も使われていません。
+  DXLib_FlightRace_komugiiro.vcxproj -> C:\Users\user\Desktop\DXzemi\komigiiro\DXLib_FlightRace_komugiiro\Debug\DXLib_FlightRace_komugiiro.exe
