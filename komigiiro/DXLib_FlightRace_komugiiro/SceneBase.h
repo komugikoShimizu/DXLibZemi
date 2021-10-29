@@ -2,6 +2,13 @@
 
 namespace Scene
 {
+	enum class TransitionType
+	{
+		STAY,
+		NEXT,
+		BACK,
+	};
+
 	// インターフェイスを作成
 	class SceneBase
 	{
