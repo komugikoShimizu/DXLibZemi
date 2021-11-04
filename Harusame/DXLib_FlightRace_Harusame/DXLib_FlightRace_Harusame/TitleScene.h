@@ -1,7 +1,9 @@
 #pragma once
+#include "SceneBase.h"
+#include <DxLib.h>
+
 namespace Scene
 {
-#include "SceneBase.h"
 	class TitleScene : public SceneBase
 	{
 	public:
@@ -12,6 +14,7 @@ namespace Scene
 		virtual void Calculation() override;
 		virtual void TwoDimensionsDraw() override;
 		virtual void ThreeDimensionsDraw() override;
+		TransitionType GetNextState() override;
 	};
 
 	TitleScene::TitleScene()
