@@ -16,6 +16,8 @@ namespace Scene
 
 		virtual void ThreeDimensionsDraw() override;
 
+		virtual TransitionType GetNextScene() override;
+
 	private:
 	};
 

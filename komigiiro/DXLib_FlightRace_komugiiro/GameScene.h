@@ -1,5 +1,6 @@
 #pragma once
 #include "SceneBase.h"
+#include "DxLib.h"
 
 namespace Scene
 {
@@ -15,6 +16,8 @@ namespace Scene
 		virtual void TwoDimentionsDraw() override;
 
 		virtual void ThreeDimensionsDraw() override;
+
+		virtual TransitionType GetNextScene() override;
 	private:
 	};
 

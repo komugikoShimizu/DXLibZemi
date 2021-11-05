@@ -155,20 +155,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CanvasBase.cpp" />
     <ClCompile Include="DXDraw.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ResultScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="UIUtilty.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CanvasBase.h" />
     <ClInclude Include="DXDraw.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="ResultScene.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="UIUtilty.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

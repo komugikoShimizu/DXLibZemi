@@ -16,5 +16,6 @@ namespace Scene
 		virtual void Calculation() = 0;
 		virtual void TwoDimentionsDraw() = 0;
 		virtual void ThreeDimensionsDraw() = 0;
+		virtual TransitionType GetNextScene() = 0;
 	};
 }
