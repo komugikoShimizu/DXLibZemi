@@ -3,7 +3,10 @@
 #include "GameScene.h"
 #include "ResultScene.h"
 #include "TitleScene.h"
+#include "UIUtilty.h"
 #include <DxLib.h>
+
+using namespace UI;
 
 namespace Scene
 {

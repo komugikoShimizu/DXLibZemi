@@ -23,6 +23,11 @@ namespace Scene
 
 	TitleScene::TitleScene()
 	{
+		ui->FontSeter(50);
+		ui->FontSeter(40);
+		ui->FontSeter(30);
+		ui->FontSeter(20);
+		ui->FontSeter(10);
 	}
 
 	TitleScene::~TitleScene()

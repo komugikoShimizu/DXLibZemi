@@ -155,7 +155,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CanvasBase.cpp" />
     <ClCompile Include="DXDraw.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="main.cpp" />
@@ -165,7 +164,6 @@
     <ClCompile Include="UIUtilty.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CanvasBase.h" />
     <ClInclude Include="DXDraw.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="ResultScene.h" />
