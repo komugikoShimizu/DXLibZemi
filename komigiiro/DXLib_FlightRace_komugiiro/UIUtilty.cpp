@@ -9,6 +9,9 @@ namespace UI
 	const char* font_Name;
 	int path;
 
+	int gridSize_x;
+	int gridSize_y;
+
 	UIUtilty::UIUtilty()
 	{
 		fontColor["red"] = GetColor(255, 0, 0);
@@ -83,6 +86,15 @@ namespace UI
 		}
 	}
 
+	void UIUtilty::CanvasSizeCreate(int maxCanvasSize)
+	{
+		int colorBit;
+		GetScreenState(&gridSize_x, &gridSize_y,&colorBit);
+
+		gridSize_x = gridSize_x / maxCanvasSize;
+		gridSize_y = gridSize_y / maxCanvasSize;
+	}
+
 	void UIUtilty::TextCreater(const char* contents,int x,int y) // 雑に使う用　
 	{
 		DrawFormatStringToHandle(x, y, fontColor["white"], path, contents);
@@ -110,5 +122,34 @@ namespace UI
 		if (fill) DrawBox(x, y, x + length, y + fontSize, fontColor[frameColor], TRUE);
 		else DrawBox(x, y, x + length, y + fontSize, fontColor[frameColor], FALSE);
 		DrawFormatStringToHandle(x, y, fontColor[colorName], fontType[fontSize], contents);
+	}
+
+	void UIUtilty::TextCreater(const char* contents, CanvasSize size) // 雑に使う用　
+	{
+		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, fontColor["white"], path, contents);
+	}
+
+	void UIUtilty::TextCreater(const char* contents, CanvasSize size, int fontsize) // フォントサイズのみ指定する用
+	{
+		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, fontColor["white"], fontType[fontsize], contents);
+	}
+
+	void UIUtilty::TextCreater(const char* contents, CanvasSize size, int fontSize, int red, int green, int blue) // rgbを直接指定する用
+	{
+		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, GetColor(red, green, blue), fontType[fontSize], contents);
+	}
+
+	void UIUtilty::TextCreater(const char* contents, CanvasSize size, int fontSize, const char* colorName) // 既に作成されているカラータイプを使用する
+	{
+		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, fontColor[colorName], fontType[fontSize], contents);
+	}
+
+	void UIUtilty::TextCreater(const char* contents, CanvasSize size, int fontSize, const char* colorName, const char* frameColor, bool fill) // 枠組みを作成するよう
+	{
+		string contents_str = contents;
+		int length = GetDrawStringWidthToHandle(contents, contents_str.length(), fontType[fontSize]);
+		if (fill) DrawBox(gridSize_x * size.x, gridSize_y * size.y, gridSize_x * size.x + length, gridSize_y * size.y + fontSize, fontColor[frameColor], TRUE);
+		else DrawBox(gridSize_x * size.x, gridSize_y * size.y, gridSize_x * size.x + length, gridSize_y * size.y + fontSize, fontColor[frameColor], FALSE);
+		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, fontColor[colorName], fontType[fontSize], contents);
 	}
 }

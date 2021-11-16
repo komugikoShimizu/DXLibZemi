@@ -3,6 +3,8 @@
  
 namespace Scene
 {
+	int num = 30;
+	bool flg = true;
 	void TitleScene::Calculation()
 	{
 		// printfDx("TitleScene::Calculation\n");
@@ -10,10 +12,12 @@ namespace Scene
 
 	void TitleScene::TwoDimentionsDraw()
 	{
-		ui->TextCreater("ゲームプログラミング　制作",0,0,20,"white");
-		ui->TextCreater("DXLib FlightRace!!", 100, 100, 50, "red","blue",false);
-		ui->TextCreater("Press Enter Key - GameStrat!", 200, 300, 20, "white");
-		ui->TextCreater("Esc - GameExit",450,450,20,"white");
+		num++;
+		if (num % 30 == 0) flg = flg ? false : true;
+		ui->TextCreater("ゲームプログラミング　制作", CanvasSize{0,0}, 20, "black","white",true);
+		ui->TextCreater("DXLib FlightRace!!", CanvasSize{8,15}, 50, "red", "blue", false);
+	    if (flg) ui->TextCreater("Press Enter Key - GameStart!", CanvasSize{15,35}, 20, "white");
+		ui->TextCreater("Esc - GameExit", CanvasSize{40,50}, 20, "white");
 	}
 
 	void TitleScene::ThreeDimensionsDraw()

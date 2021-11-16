@@ -2,9 +2,6 @@
 #include <Memory>
 #include "DXDraw.h"
 #include "SceneManager.h"
-#include "UIUtilty.h"
-
-using namespace UI;
 
 // ÉvÉçÉOÉâÉÄÇÕ WinMain Ç©ÇÁénÇ‹ÇËÇ‹Ç∑
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -16,8 +13,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	auto draw = std::make_unique<DXDraw>();
 	auto sceneManager = std::make_unique<Scene::SceneManager>();
-	
-	bool fontsize = false;
+	int GetDrawArea(RECT * Rect);
+
 	while (ProcessMessage() == 0)
 	{
 		ClearDrawScreen();
