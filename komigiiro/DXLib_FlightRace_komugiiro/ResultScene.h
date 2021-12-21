@@ -1,6 +1,8 @@
 #pragma once
 #include "SceneBase.h"
 #include "DxLib.h"
+#include "UIUtilty.h"
+#include "InputManager.h"
 
 namespace Scene
 {

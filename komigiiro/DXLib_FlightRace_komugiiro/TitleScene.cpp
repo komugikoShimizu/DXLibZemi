@@ -1,5 +1,6 @@
 #include "TitleScene.h"
 #include "DxLib.h"
+#include "InputManager.h"
  
 namespace Scene
 {
@@ -17,10 +18,10 @@ namespace Scene
 		pos++;
 		if (pos > 50) pos = -10;
 		if (num % 30 == 0) flg = flg ? false : true;
-		ui->TextCreater("ゲームプログラミング　制作", CanvasSize{pos,0}, 20, "black","white",true);
-		ui->TextCreater("DXLib FlightRace!!", CanvasSize{8,15}, 50, "red", "blue", false);
-	    if (flg) ui->TextCreater("Press Enter Key - GameStart!", CanvasSize{15,35}, 20, "white");
-		ui->TextCreater("Esc - GameExit", CanvasSize{40,50}, 20, "white");
+		UIUtilty::TextCreater("ゲームプログラミング　制作", CanvasPosition{pos,0}, 20, "black","white",true);
+		UIUtilty::TextCreater("DXLib FlightRace!!", CanvasPosition{8,15}, 50, "red", "blue", false);
+	    if (flg) UIUtilty::TextCreater("Press LeftMouse Click - GameStart!", CanvasPosition{13,35}, 20, "white");
+		UIUtilty::TextCreater("Esc - GameExit", CanvasPosition{40,50}, 20, "white");
 	}
 
 	void TitleScene::ThreeDimensionsDraw()
@@ -30,7 +31,7 @@ namespace Scene
 
 	TransitionType TitleScene::GetNextScene()
 	{
-		if (CheckHitKey(KEY_INPUT_RETURN)) return TransitionType::NEXT;
+		if (Input::isInputDown(Input::InputType::ADVANCE)) return TransitionType::NEXT;
 		return TransitionType::STAY;
 	}
 }

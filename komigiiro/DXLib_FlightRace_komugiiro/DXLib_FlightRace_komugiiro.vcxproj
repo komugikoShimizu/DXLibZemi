@@ -155,22 +155,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="DXDraw.cpp" />
     <ClCompile Include="GameScene.cpp" />
-    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ResultScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SphereCollider.cpp" />
+    <ClCompile Include="Surface.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="UIUtilty.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="DXDraw.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="ResultScene.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SphereCollider.h" />
+    <ClInclude Include="Surface.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="UIUtilty.h" />
   </ItemGroup>

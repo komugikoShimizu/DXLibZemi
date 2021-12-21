@@ -4,22 +4,24 @@ namespace Scene
 {
 	void ResultScene::Calculation()
 	{
-		printfDx("ResultScene::Calculation\n");
+		UIUtilty::TextCreater("GAME OVER", CanvasPosition{20,15},30,"red");
+		UIUtilty::TextCreater("right click - TitleScene", CanvasPosition{ 10,25 }, 40, "blue", "green", true);
+		UIUtilty::TextCreater("Esc - GameExit", CanvasPosition{ 40,50 }, 20, "white");
 	}
 
 	void ResultScene::TwoDimentionsDraw()
 	{
-		printfDx("ResultScene::TwoDimentionsDraw\n");
+
 	}
 
 	void ResultScene::ThreeDimensionsDraw()
 	{
-		printfDx("ResultScene::ThreeDimensionsDraw\n");
+
 	}
 
 	TransitionType ResultScene::GetNextScene()
 	{
-		if (CheckHitKey(KEY_INPUT_RETURN)) return TransitionType::NEXT;
+		if (Input::isBackDown()) return TransitionType::NEXT;
 		return TransitionType::STAY;
 	}
 }

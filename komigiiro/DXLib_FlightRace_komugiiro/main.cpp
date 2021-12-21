@@ -13,7 +13,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	auto draw = std::make_unique<DXDraw>();
 	auto sceneManager = std::make_unique<Scene::SceneManager>();
-	int GetDrawArea(RECT * Rect);
 
 	while (ProcessMessage() == 0)
 	{

@@ -12,7 +12,7 @@ namespace UI
 	int gridSize_x;
 	int gridSize_y;
 
-	UIUtilty::UIUtilty()
+	void UIUtilty::ColorCreater()
 	{
 		fontColor["red"] = GetColor(255, 0, 0);
 		fontColor["green"] = GetColor(0, 255, 0);
@@ -97,12 +97,12 @@ namespace UI
 
 	void UIUtilty::TextCreater(const char* contents,int x,int y) // 雑に使う用　
 	{
-		DrawFormatStringToHandle(x, y, fontColor["white"], path, contents);
+		DrawFormatStringToHandle(x, y, GetColor(255,255,255), path, contents);
 	}
 
 	void UIUtilty::TextCreater(const char* contents, int x, int y, int fontsize) // フォントサイズのみ指定する用
 	{
-		DrawFormatStringToHandle(x, y, fontColor["white"], fontType[fontsize], contents);
+		DrawFormatStringToHandle(x, y, GetColor(255, 255, 255), fontType[fontsize], contents);
 	}
 
 	void UIUtilty::TextCreater(const char* contents, int x, int y, int fontSize, int red, int green, int blue) // rgbを直接指定する用
@@ -124,27 +124,27 @@ namespace UI
 		DrawFormatStringToHandle(x, y, fontColor[colorName], fontType[fontSize], contents);
 	}
 
-	void UIUtilty::TextCreater(const char* contents, CanvasSize size) // 雑に使う用　
+	void UIUtilty::TextCreater(const char* contents, CanvasPosition size) // 雑に使う用　
 	{
-		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, fontColor["white"], path, contents);
+		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, GetColor(255, 255, 255), path, contents);
 	}
 
-	void UIUtilty::TextCreater(const char* contents, CanvasSize size, int fontsize) // フォントサイズのみ指定する用
+	void UIUtilty::TextCreater(const char* contents, CanvasPosition size, int fontsize) // フォントサイズのみ指定する用
 	{
-		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, fontColor["white"], fontType[fontsize], contents);
+		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, GetColor(255, 255, 255), fontType[fontsize], contents);
 	}
 
-	void UIUtilty::TextCreater(const char* contents, CanvasSize size, int fontSize, int red, int green, int blue) // rgbを直接指定する用
+	void UIUtilty::TextCreater(const char* contents, CanvasPosition size, int fontSize, int red, int green, int blue) // rgbを直接指定する用
 	{
 		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, GetColor(red, green, blue), fontType[fontSize], contents);
 	}
 
-	void UIUtilty::TextCreater(const char* contents, CanvasSize size, int fontSize, const char* colorName) // 既に作成されているカラータイプを使用する
+	void UIUtilty::TextCreater(const char* contents, CanvasPosition size, int fontSize, const char* colorName) // 既に作成されているカラータイプを使用する
 	{
 		DrawFormatStringToHandle(gridSize_x * size.x, gridSize_y * size.y, fontColor[colorName], fontType[fontSize], contents);
 	}
 
-	void UIUtilty::TextCreater(const char* contents, CanvasSize size, int fontSize, const char* colorName, const char* frameColor, bool fill) // 枠組みを作成するよう
+	void UIUtilty::TextCreater(const char* contents, CanvasPosition size, int fontSize, const char* colorName, const char* frameColor, bool fill) // 枠組みを作成するよう
 	{
 		string contents_str = contents;
 		int length = GetDrawStringWidthToHandle(contents, contents_str.length(), fontType[fontSize]);

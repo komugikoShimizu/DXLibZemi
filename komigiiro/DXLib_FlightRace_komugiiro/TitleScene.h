@@ -23,12 +23,13 @@ namespace Scene
 
 	TitleScene::TitleScene()
 	{
-		ui->CanvasSizeCreate(50);
-		ui->FontSeter(50);
-		ui->FontSeter(40);
-		ui->FontSeter(30);
-		ui->FontSeter(20);
-		ui->FontSeter(10);
+		UIUtilty::ColorCreater();
+		UIUtilty::CanvasSizeCreate(50);
+		UIUtilty::FontSeter(50);
+		UIUtilty::FontSeter(40);
+		UIUtilty::FontSeter(30);
+		UIUtilty::FontSeter(20);
+		UIUtilty::FontSeter(10);
 	}
 
 	TitleScene::~TitleScene()
